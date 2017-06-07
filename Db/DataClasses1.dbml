@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="STORE" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TL\SQLEXPRESS;Initial Catalog=STORE;Integrated Security=True" SettingsObjectName="Db.Properties.Settings" SettingsPropertyName="STOREConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BOOK" Member="BOOKs">
+    <Type Name="BOOK">
+      <Column Name="Book_ID" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Book_Name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Book_AuthorName" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Book_Price" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Book_Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BOOK_INVOICE" Member="INVOICEs" ThisKey="Book_ID" OtherKey="Book_ID" Type="INVOICE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="Cust_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cust_Fname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cust_Lname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cust_Balance" Type="System.Decimal" DbType="Decimal(9,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Cust_User" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cust_Password" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_INVOICE" Member="INVOICEs" ThisKey="Cust_ID" OtherKey="Cust_ID" Type="INVOICE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INVOICE" Member="INVOICEs">
+    <Type Name="INVOICE">
+      <Column Name="Inv_Num" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Book_ID" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Inv_Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cust_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Inv_Total" Type="System.Decimal" DbType="Decimal(9,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Inv_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_INVOICE" Member="CUSTOMER" ThisKey="Cust_ID" OtherKey="Cust_ID" Type="CUSTOMER" IsForeignKey="true" />
+      <Association Name="BOOK_INVOICE" Member="BOOK" ThisKey="Book_ID" OtherKey="Book_ID" Type="BOOK" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

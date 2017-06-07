@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01786759-3007-460F-A163-ADA99A2CDC1F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUIStore</RootNamespace>
+    <AssemblyName>GUIStore</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DateRangePurchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateRangePurchases.Designer.cs">
+      <DependentUpon>DateRangePurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProducts.Designer.cs">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustLogin.Designer.cs">
+      <DependentUpon>CustLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccnt.Designer.cs">
+      <DependentUpon>CreateAccnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceRangePurchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceRangePurchases.Designer.cs">
+      <DependentUpon>PriceRangePurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AllPurchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllPurchases.Designer.cs">
+      <DependentUpon>AllPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOREDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>STOREDataSet2.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DateRangePurchases.resx">
+      <DependentUpon>DateRangePurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllProducts.resx">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccnt.resx">
+      <DependentUpon>CreateAccnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustLogin.resx">
+      <DependentUpon>CustLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceRangePurchases.resx">
+      <DependentUpon>PriceRangePurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="AllPurchases.resx">
+      <DependentUpon>AllPurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="STOREDataSet2.xsc">
+      <DependentUpon>STOREDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="STOREDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>STOREDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="STOREDataSet2.xss">
+      <DependentUpon>STOREDataSet2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Db\Db.csproj">
+      <Project>{E812E1CB-F158-4EE9-8D73-53442E8582E6}</Project>
+      <Name>Db</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
